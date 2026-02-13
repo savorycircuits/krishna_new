@@ -1,0 +1,36 @@
+name: krishna_test
+description: "A new Flutter project for Krishna Restaurant POS."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  
+  # Reports & Printing
+  pdf: ^3.10.0
+  printing: ^5.11.0
+  excel: ^4.0.0
+  path_provider: ^2.1.0
+  file_picker: ^8.0.0
+  
+  # Stable Networking Versions
+  socket_io: ^1.0.1
+  socket_io_client: 1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Add your assets here if you have a restaurant logo
+  # assets:
+  #   - assets/logo.png

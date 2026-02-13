@@ -1,0 +1,29 @@
+name: Build Windows App
+on: 
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Build Windows
+        run: flutter build windows --release
+
+      - name: Upload Release Folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: Krishna-App-Windows
+          path: build/windows/x64/runner/Release/
